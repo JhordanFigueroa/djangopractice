@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>About Page</h1>
+{% endblock %}
+
+{% block mainbody_block %}
+    <h1>About Body</h1>
+    <p>
+        {{my_title}}, {{my_number}}, {{my_list}}
+    </p>
+
+    <ul>
+        {% for num in my_list %}
+            {% if num == 24 %}
+                <li>{{forloop.counter}} - {{num|add:22}}</li>
+            {% elif num == "Kobe" %}
+                <li>"GOAT"</li>
+            {% else %}
+                <li>{{forloop.counter}} - {{num}}</li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+{% endblock %}
